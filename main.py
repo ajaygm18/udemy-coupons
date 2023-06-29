@@ -46,7 +46,7 @@ def bsdk(num):
             breaker = True
             break
         print("=" * 100)
-
+print(746766)
 
 for il in range(1, 15):
     if breaker == True:
