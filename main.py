@@ -4,7 +4,7 @@ import csv
 
 u_link = [['Course Name', 'Link', 'Coupon']]
 breaker = False
-
+print('Start')
 def bsdk(num):
     global breaker, u_link
     rs = requests.get('https://www.udemyfreebies.com/free-udemy-courses/'+str(num))
@@ -27,8 +27,10 @@ def bsdk(num):
             u_link.append([title, linkx, coupn])
         else:
             breaker = True
+            break
         print("=" * 100)
 
+print('Starts')
 
 for il in range(1, 15):
     if breaker == True:
