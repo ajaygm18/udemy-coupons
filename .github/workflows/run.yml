@@ -1,0 +1,30 @@
+name: Hourly Python Job
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+jobs:
+  run-python:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.11"  # Replace with your desired Python version
+
+      - name: Run Python script
+        run: |
+          pip install -r requirements.txt
+          python main.py
+          
+      - name: Upload result.tsv
+        uses: actions/upload-artifact@v2
+        with:
+          name: result
+          path: path/to/result.tsv
