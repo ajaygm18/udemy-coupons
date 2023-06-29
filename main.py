@@ -37,7 +37,7 @@ for il in range(1, 15):
     if breaker == True:
         break
     bsdk(il)
-
+print(u_link)
 if len(u_link) > 1:
     with open('results.tsv', 'w', encoding='utf-8') as file:
         writer = csv.writer(file, lineterminator='\n', delimiter='\t')
