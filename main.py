@@ -24,7 +24,7 @@ def bsdk(num):
     }
     rs = requests.get('https://www.udemyfreebies.com/free-udemy-courses/'+str(num), headers=headers)
     soup = BeautifulSoup(rs.text, 'lxml')
-    print(rs.text[0:30])
+    print(rs.text)
 
     cpns = soup.select('.col-md-4.col-sm-6 .theme-block')
     for i in cpns:
